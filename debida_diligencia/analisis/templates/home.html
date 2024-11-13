@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulario de Cliente</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        /* Estilos generales */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        /* Contenedor del formulario */
+        .form-container {
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+            width: 400px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333333;
+        }
+
+        /* Organización vertical de los campos */
+        .form-group {
+            margin-bottom: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-group label {
+            margin-bottom: 5px;
+            color: #555;
+        }
+
+        .form-group input,
+        .form-group select {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        /* Botón de envío */
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+        }
+
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Bienvenido al sistema de debida diligencia</h1>
+        <form action="{% url 'agregar_cliente' %}" method="POST">
+            {% csrf_token %}
+            
+            <div class="form-group">
+                <label for="nombre">Nombre Completo:</label>
+                <input type="text" id="nombre" name="nombre" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="empresa">Empresa:</label>
+                <input type="text" id="empresa" name="empresa" required>
+            </div>
+
+            <div class="form-group">
+                <label for="tipo_documento">Tipo de Documento:</label>
+                <select id="tipo_documento" name="tipo_documento" required>
+                    <option value="">Seleccione</option>
+                    <option value="DNI">DNI</option>
+                    <option value="Pasaporte">Pasaporte</option>
+                    <option value="Otro">Otro</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="numero_documento">Número de Documento:</label>
+                <input type="text" id="numero_documento" name="numero_documento" required>
+            </div>
+
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" name="telefono" required>
+            </div>
+
+            <div class="form-group">
+                <label for="correo">Correo Electrónico:</label>
+                <input type="email" id="correo" name="correo" required>
+            </div>
+
+            <button type="submit" class="boton-enviar">Enviar</button>
+        </form>
+    </div>
+
+  <script>
+      // Este script resetea el formulario después de enviar
+      document.querySelector('form').onsubmit = function() {
+          setTimeout(function() {
+              document.querySelector('form').reset();
+          }, 100);
+      };
+  </script>
+</body>
+</html>

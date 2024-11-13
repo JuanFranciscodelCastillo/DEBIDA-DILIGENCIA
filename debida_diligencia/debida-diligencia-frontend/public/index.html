@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Debida Diligencia</title>
+</head>
+<body>
+    <h1>Bienvenido al sistema de debida diligencia</h1>
+    <form action="{% url 'agregar_cliente' %}" method="POST">
+      {% csrf_token %}
+      
+      <label for="nombre">Nombre Completo:</label>
+      <input type="text" id="nombre" name="nombre" required>
+      
+      <label for="empresa">Empresa:</label>
+      <input type="text" id="empresa" name="empresa" required>
+      
+      <label for="tipo_documento">Tipo de Documento:</label>
+      <select id="tipo_documento" name="tipo_documento" required>
+          <option value="">Seleccione</option>
+          <option value="CC">Cédula de Ciudadanía</option>
+          <option value="CE">Cédula de Extranjería</option>
+          <option value="TI">Tarjeta de Identidad</option>
+          <option value="NIT">NIT</option>
+          <option value="PAS">Pasaporte</option>
+      </select>
+      
+      <label for="numero_documento">Número de Documento:</label>
+      <input type="text" id="numero_documento" name="numero_documento" required>
+      
+      <label for="telefono">Teléfono:</label>
+      <input type="text" id="telefono" name="telefono" required>
+      
+      <label for="correo">Correo Electrónico:</label>
+      <input type="email" id="correo" name="correo" required>
+      
+      <button type="submit">Enviar</button>
+  </form>
+
+  <script>
+      // Este script resetea el formulario después de enviar
+      document.querySelector('form').onsubmit = function() {
+          setTimeout(function() {
+              document.querySelector('form').reset();
+          }, 100);
+      };
+  </script>
+</body>
+</html>
