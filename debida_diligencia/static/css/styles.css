@@ -1,55 +1,90 @@
 /* static/css/styles.css */
 
+/* styles.css */
+/* Estilos generales para el cuerpo de la página */
 body {
-  font-family: Arial, sans-serif;
-  background-color: #276a37;
-  margin: 0;
+  font-family: Arial, sans-serif; /* Fuente legible */
+  background-color: #5f8966; /* Color de fondo suave */
+  margin: 10;
   padding: 0;
+  box-sizing: border-box;
 }
 
+/* Contenedor principal del formulario */
 .form-container {
-  background-color: hsl(145, 66%, 57%);
-  padding: 30px;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 600px;
-  margin: 50px auto;
+  width: 80%;
+  max-width: 1000px; /* Ancho máximo */
+  margin: 120px auto; /* Centrado */
+  padding: 20px;
+  background-color: rgba(121, 125, 123, 0.647); /* Fondo blanco */
+  box-shadow: 0 5px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 20px; /* Bordes redondeados */
 }
 
+/* Estilo para los encabezados */
 h1 {
+  color: #333; /* Color oscuro */
   text-align: center;
-  color: #333;
+  font-size: 60px;
 }
 
-.form-group {
-  margin-bottom: 15px;
-}
-
+/* Estilo para las etiquetas de los campos */
 label {
   display: block;
-  font-size: 14px;
-  color: #555;
+  margin-bottom: 2px;
+  font-weight: bold;
+  font-size: 30px;
+  color: #0e0e0e;
 }
 
-input {
-  width: 100%;
+/* Estilo para los campos de entrada (input, select) */
+input, select, button {
+  width: 95%; /* Ancho completo */
   padding: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  margin: 10px 0;
+  border: 4px solid #0e0c0c; /* Borde suave */
+  border-radius: 10px; /* Bordes redondeados */
+  font-size: 20px;
 }
 
+/* Estilo para la lista desplegable (select) */
+select {
+  -webkit-appearance: none; /* Eliminar estilo predeterminado en algunos navegadores */
+  -moz-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: url('https://www.pngrepo.com/png/10056/180/arrow.png'); /* Imagen de flecha */
+  background-repeat: no-repeat;
+  background-position: right 10px center; /* Posición de la flecha */
+  padding-right: 30px; /* Espacio para la flecha */
+}
+
+/* Estilo para el botón de envío */
 button {
-  width: 100%;
-  padding: 10px;
-  background-color: hwb(148 7% 46%);
-  color: white;
-  border: none;
-  border-radius: 5px;
-  font-size: 16px;
+  display: block;
+  width: 50%; /* Ancho completo */
+  background-color: #375538ae; /* Fondo Verde Oscuro */
+  color: white; /* Texto blanco */
+  border: 4px solid #0e0c0c;
   cursor: pointer;
+  font-size: 30px;
+  text-align: center;
+
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #5f8966; /* Cambia el color al pasar el ratón */
+}
+
+/* Estilo para los grupos de formulario */
+.form-group {
+  margin-bottom: 20px;
+}
+
+/* Estilo para el pie de página */
+footer {
+  text-align: center;
+  margin-top: 20px;
+  font-size: 14px;
+  color: #777;
 }
